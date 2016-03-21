@@ -1,0 +1,36 @@
+#!/bin/sh
+# postinst script for bunsen-thunar
+
+set -e
+
+this_package='bunsen-thunar'
+suffix='bunsen-disabled'
+file_package=libthunarx-2-0
+filename='thunarx-2/thunar-wallpaper-plugin.so' # path after multiarch tuple
+
+file=$(dpkg -L "$file_package" | grep "^/usr/lib/[^/]\+/$filename\$") || {
+    echo "$0: $filename not listed by $file_package" >&2
+    exit 1
+}
+diverted_file="$(dpkg-divert --truename "$file")"
+diverter="$(dpkg-divert --listpackage "$file")"
+
+case "$diverter" in
+"$this_package")
+    [ "$diverted_file" = "${file}.${suffix}" ] || {
+        dpkg-divert --remove --rename --package "$this_package" "$file"
+        dpkg-divert --add --rename --package "$this_package" --divert "${file}.${suffix}" "$file"
+    }
+    ;;
+'')
+    dpkg-divert --add --rename --package "$this_package" --divert "${file}.${suffix}" "$file"
+    ;;
+*)
+    echo "$file is already diverted to $diverted_file by $diverter" >&2
+    exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

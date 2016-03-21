@@ -1,0 +1,11 @@
+bunsen-thunar
+=============
+
+This package modifies the behaviour of the Thunar file manager,
+for use with BunsenLabs Linux.
+
+The currently implemented modifications are:
+
+*) Disable the "Set as wallpaper" context menu item,
+which is unusable without xfdesktop4.
+

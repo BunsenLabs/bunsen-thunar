@@ -1,0 +1,34 @@
+#!/bin/sh
+# prerem script for bunsen-thunar
+
+set -e
+
+this_package='bunsen-thunar'
+suffix='bunsen-disabled'
+file_package=libthunarx-2-0
+filename='thunarx-2/thunar-wallpaper-plugin.so' # path after multiarch tuple
+
+file=$(dpkg -L "$file_package" | grep "^/usr/lib/[^/]\+/$filename\$") || {
+    echo "$0: $filename not listed by $file_package" >&2
+    exit 1
+}
+diverted_file="$(dpkg-divert --truename "$file")"
+diverter="$(dpkg-divert --listpackage "$file")"
+
+case $1 in
+remove|deconfigure)
+    case "$diverter" in
+    "$this_package")
+        dpkg-divert --remove --rename --package "$this_package" "$file"
+        ;;
+    *)
+        echo "$file is diverted to $diverted_file by $diverter" >&2
+        exit 1
+        ;;
+    esac
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
