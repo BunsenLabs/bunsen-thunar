@@ -1,3 +1,9 @@
+bunsen-thunar (9.0-1) helium; urgency=medium
+
+  * Version change for helium release.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 12 Jun 2017 15:33:53 +0900
+
 bunsen-thunar (8.0-1) bunsen-hydrogen; urgency=low
 
   * Initial release.
