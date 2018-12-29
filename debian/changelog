@@ -1,3 +1,11 @@
+bunsen-thunar (10.0-1) lithium; urgency=high
+
+  * Migrate to Lithium.
+  * Raise debhelper (10) and standards (4.3.0) versions.
+  * Migrate from thunarx-2 to thunarx-3.
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 29 Dec 2018 17:37:03 +0900
+
 bunsen-thunar (9.0-2) helium; urgency=medium
 
   * Change package priority from deprecated 'extra' to 'optional'.
