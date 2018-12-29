@@ -6,3 +6,7 @@ This package uses dpkg-divert to rename
 to disable the "Set as Wallpaper" context menu item.
 
  -- John Crawley <john@bunsenlabs.org>  Mon, 07 Mar 2016 16:14:39 +0900
+
+Now operating on /usr/lib/*/thunarx-3/thunar-wallpaper-plugin.so
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 29 Dec 2018 17:03:46 +0900

@@ -5,8 +5,8 @@ set -e
 
 this_package='bunsen-thunar'
 suffix='bunsen-disabled'
-file_package=libthunarx-2-0
-filename='thunarx-2/thunar-wallpaper-plugin.so' # path after multiarch tuple
+file_package=libthunarx-3-0
+filename='thunarx-3/thunar-wallpaper-plugin.so' # path after multiarch tuple
 
 file=$(dpkg -L "$file_package" | grep "^/usr/lib/[^/]\+/$filename\$") || {
     echo "$0: $filename not listed by $file_package" >&2
