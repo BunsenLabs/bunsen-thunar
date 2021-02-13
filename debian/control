@@ -17,5 +17,6 @@ Description: Modify the behaviour of Thunar for BunsenLabs
  .
  At present the following actions are performed:
   - Disable the "Set as Wallpaper" context menu item,
- which depends on xfdesktop4.
+ which depends on xfdesktop4. It is done with dpkg-divert,
+ so this is currently an empty package.
 
