@@ -1,3 +1,10 @@
+bunsen-thunar (11.0-2) beryllium; urgency=medium
+
+  * debian/control: Add reference to this being an "empty package"
+    to avoid Lintian warning.
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 13 Feb 2021 16:23:27 +0900
+
 bunsen-thunar (11.0-1) beryllium; urgency=medium
 
   * Migrate for Debian Bullseye.
