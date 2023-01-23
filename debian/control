@@ -2,8 +2,9 @@ Source: bunsen-thunar
 Section: misc
 Priority: optional
 Maintainer: John Crawley <john@bunsenlabs.org>
-Build-Depends: debhelper-compat (= 12)
-Standards-Version: 4.5.1
+Build-Depends: debhelper-compat (= 13)
+Rules-Requires-Root: no
+Standards-Version: 4.6.1.0
 Homepage: https://github.com/BunsenLabs/bunsen-thunar
 Vcs-Git: https://github.com/BunsenLabs/bunsen-thunar.git
 Vcs-Browser: https://github.com/BunsenLabs/bunsen-thunar
@@ -17,6 +18,5 @@ Description: Modify the behaviour of Thunar for BunsenLabs
  .
  At present the following actions are performed:
   - Disable the "Set as Wallpaper" context menu item,
- which depends on xfdesktop4. It is done with dpkg-divert,
- so this is currently an empty package.
-
+  which depends on xfdesktop4. It is done with dpkg-divert,
+  so this is currently an empty package.

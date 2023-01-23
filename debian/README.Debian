@@ -1,7 +1,7 @@
 bunsen-thunar for Debian
 ------------------------
 
-This package uses dpkg-divert to rename 
+This package uses dpkg-divert to rename
 /usr/lib/*/thunarx-2/thunar-wallpaper-plugin.so
 to disable the "Set as Wallpaper" context menu item.
 
